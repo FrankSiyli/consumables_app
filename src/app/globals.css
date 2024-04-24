@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --appOrange: #f29106;
+  --appBlue: #0f1648;
+  --appGrey: #dadada;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.dark body {
+  background-color: #1c1c1c;
+}
+
+html {
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+body {
+  overscroll-behavior: none;
+}
+
+.safari-fixes{
+  direction: rtl;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.x-rotation{
+animation: spinX 4s linear infinite;
+
+@keyframes spinX {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+    
+  }
+  50% {
+    transform: rotateX(360deg) rotateY(90deg);
+    
+  }
+
+  to {
+    transform: rotateX(0deg) rotateY(deg);
+  }
+}}
+.y-rotation{
+animation: spinY 4s linear infinite;
+
+@keyframes spinY {
+  from {
+    transform: rotateY(360deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(0deg) rotateY(90deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateY(0deg);
+  }
+}}
+.z-rotation{
+animation: spinZ 4s linear infinite;
+
+@keyframes spinZ {
+  from {
+    transform: rotateZ(360deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateZ(0deg) rotateX(90deg);
+  }
+  to {
+    transform: rotateZ(360deg) rotateX(0deg);
+  }
+}}
+
+.primary-toast {
+  animation: slideInOut 4s linear 0s 1 forwards;
+  background-color: white;
+  z-index: 50;
+  position: fixed;
+  top: 15vh;
+  right: 0px;
+  height: auto;
+  padding: 0.5rem;
+  text-align: center;
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-color: var(--appOrange);
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.secondary-toast {
+  animation: slideInOut 4s linear 0s 1 forwards;
+  background-color: white;
+  z-index: 50;
+  position: fixed;
+  top: 25vh;
+  right: 0px;
+  height: auto;
+  padding: 0.5rem;
+  text-align: center;
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-color: var(--appOrange);
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0vw);
+  }
+  80% {
+    transform: translateX(0vw);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes slideInOut {
+  0% {
+    transform: translateX(100%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
