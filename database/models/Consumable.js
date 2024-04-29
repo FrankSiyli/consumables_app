@@ -25,9 +25,9 @@ const ConsumableSchema = new Schema(
     title: { type: String },
     toolType: { type: String },
     type: { type: String },
-    changes: [ChangeSchema],
+    changes: [{ type: ChangeSchema }],
     timestamp: { type: Date, default: Date.now },
-    expiryTimestamp: { type: Date, expireAfterSeconds: 0 }, // expiryTimestamp only needed as long as using image blobs
+    expiryTimestamp: { type: Date }, // expiryTimestamp only needed as long as using image blobs
   },
   { collection: "consumables" }
 );

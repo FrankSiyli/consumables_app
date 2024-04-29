@@ -76,10 +76,6 @@ const ClickMenuItems = () => {
     setFilteredItems(filtered);
   }, [selectedCheckBoxes, fetchedConsumables]);
 
-  const hoveredItem = () => {
-    setFilteredItemIsHovered(true);
-  };
-
   return (
     <>
       <div className="w-full flex flex-col gap-1">
@@ -128,20 +124,18 @@ const ClickMenuItems = () => {
                     }`}
                   />
                 </div>
-                <span className="w-1/5 text-center">
+                <p className="w-1/5 text-center">
                   {capitalizeFirstLetter(singleConsumable.title)}
-                </span>
-                <span className="w-1/5 text-center">
+                </p>
+                <p className="w-1/5 text-center">
                   {capitalizeFirstLetter(singleConsumable.type)}
-                </span>
-                <span className="w-1/5 text-center">
+                </p>
+                <p className="w-1/5 text-center">
                   {singleConsumable.location.slice(0, 1) +
                     singleConsumable.location.charAt(1).toUpperCase() +
                     singleConsumable.location.slice(2)}
-                </span>
-                <span className="w-1/5 text-center">
-                  {singleConsumable.amount}
-                </span>
+                </p>
+                <p className="w-1/5 text-center">{singleConsumable.amount}</p>
               </div>
             ))}
           </>
