@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import dbConnect from "../lib/dbConnect";
+import dbConnect from "../../database/dbConnect";
 
 export default async function sendEmail(req, res) {
   try {

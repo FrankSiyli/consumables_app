@@ -1,4 +1,4 @@
-import dbConnect from "../lib/dbConnect";
+import dbConnect from "../../database/dbConnect";
 import Consumable from "../../database/models/Consumable";
 
 export default async function handler(request, response) {
