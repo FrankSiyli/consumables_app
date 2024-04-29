@@ -1,3 +1,15 @@
+A storage app for consumables.
+<br>
+![img](./consumables_image_1.jpg)
+<br>
+
+In admin mode you can add and update items and see the changelog of each item.
+<br>
+![img](./consumables_image_2.jpg)
+<br>
+<br>
+NextJS, MongoDB, Recoil, TailwindCSS, Nodemailer, Darkmode, responsive
+
 ### This is a [Next.js](https://nextjs.org/) project
 
 after cloning:
