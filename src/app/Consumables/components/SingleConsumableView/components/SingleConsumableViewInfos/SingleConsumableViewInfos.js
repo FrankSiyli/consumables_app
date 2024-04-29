@@ -97,20 +97,41 @@ const SingleConsumableViewInfos = () => {
     }
   };
 
-  const handleUpdateSubmitClick = () => {
-    updateCategoryValue("title", title?.toLowerCase());
-    updateCategoryValue("type", type?.toLowerCase());
-    updateCategoryValue("location", location?.toLowerCase());
-    updateCategoryValue("amount", parseInt(amount));
-    updateCategoryValue("minimumAmount", parseInt(minimumAmount));
-    updateCategoryValue("consumableWidth", consumableWidth?.toLowerCase());
-    updateCategoryValue("consumableLength", consumableLength?.toLowerCase());
-    updateCategoryValue("toolType", toolType?.toLowerCase());
-    updateCategoryValue("material", material?.toLowerCase());
-    updateCategoryValue("tensileStrenght", tensileStrenght?.toLowerCase());
-    updateCategoryValue("vacuum", vacuum?.toLowerCase());
-    updateCategoryValue("supplier", supplier?.toLowerCase());
-    updateCategoryValue("articelNumber", articelNumber?.toLowerCase());
+  const handleUpdateSubmitClick = async () => {
+    setIsLoading(true);
+
+    try {
+      await updateCategoryValue("title", title?.toLowerCase());
+      await updateCategoryValue("type", type?.toLowerCase());
+      await updateCategoryValue("location", location?.toLowerCase());
+      await updateCategoryValue("amount", parseInt(amount));
+      await updateCategoryValue("minimumAmount", parseInt(minimumAmount));
+      await updateCategoryValue(
+        "consumableWidth",
+        consumableWidth?.toLowerCase()
+      );
+      await updateCategoryValue(
+        "consumableLength",
+        consumableLength?.toLowerCase()
+      );
+      await updateCategoryValue("toolType", toolType?.toLowerCase());
+      await updateCategoryValue("material", material?.toLowerCase());
+      await updateCategoryValue(
+        "tensileStrenght",
+        tensileStrenght?.toLowerCase()
+      );
+      await updateCategoryValue("vacuum", vacuum?.toLowerCase());
+      await updateCategoryValue("supplier", supplier?.toLowerCase());
+      await updateCategoryValue("articelNumber", articelNumber?.toLowerCase());
+
+      setToastText("Consumable edited");
+      setShowToast(true);
+    } catch (error) {
+      console.error("An error occurred:", error);
+      alert("Failed to update category value");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleDeleteClick = async () => {
