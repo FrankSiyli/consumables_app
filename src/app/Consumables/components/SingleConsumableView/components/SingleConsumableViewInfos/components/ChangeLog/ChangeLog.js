@@ -1,6 +1,6 @@
 import { isAdminState } from "@/app/recoil/atoms/isAdminState";
 import { selectedSingleConsumableState } from "@/app/recoil/atoms/selectedSingleConsumableState";
-import useCapitalizeFirstLetter from "@/app/useFunctions/useCapitalizeFirstLetter";
+import capitalizeFirstLetter from "@/app/useFunctions/capitalizeFirstLetter";
 import React from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
@@ -26,7 +26,7 @@ const ChangeLog = () => {
               return (
                 <div key={index} className="w-full text-s flex justify-between">
                   <div className="w-1/4 flex justify-between">
-                    <span>{useCapitalizeFirstLetter(change.category)} </span>
+                    <span>{capitalizeFirstLetter(change.category)} </span>
                   </div>
                   <div className="w-1/4">
                     <span>old value: </span>

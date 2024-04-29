@@ -7,7 +7,7 @@ import { singleConsumableViewModeState } from "@/app/recoil/atoms/singleConsumab
 import Image from "next/image";
 import Loader from "@/app/Loader/Loader";
 import { isLoadingState } from "@/app/recoil/atoms/isLoadingState";
-import useCapitalizeFirstLetter from "@/app/useFunctions/useCapitalizeFirstLetter";
+import capitalizeFirstLetter from "@/app/useFunctions/capitalizeFirstLetter";
 import logo from "../../../../../../public/logo.jpg";
 
 const SearchBarItems = () => {
@@ -80,10 +80,10 @@ const SearchBarItems = () => {
                   />
                 </div>
                 <span className="w-1/5 text-center">
-                  {useCapitalizeFirstLetter(singleConsumable.title)}
+                  {capitalizeFirstLetter(singleConsumable.title)}
                 </span>
                 <span className="w-1/5 text-center">
-                  {useCapitalizeFirstLetter(singleConsumable.type)}
+                  {capitalizeFirstLetter(singleConsumable.type)}
                 </span>
                 <span className="w-1/5 text-center">
                   {singleConsumable.location.slice(0, 1) +

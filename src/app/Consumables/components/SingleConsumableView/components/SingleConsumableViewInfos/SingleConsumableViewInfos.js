@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { selectedSingleConsumableState } from "@/app/recoil/atoms/selectedSingleConsumableState";
-import useCapitalizeFirstLetter from "@/app/useFunctions/useCapitalizeFirstLetter";
+import capitalizeFirstLetter from "@/app/useFunctions/capitalizeFirstLetter";
 import typeArray from "@/app/arrays/typeArray";
 import toolTypeArray from "@/app/arrays/toolTypeArray";
 import tensileStrenghtArray from "@/app/arrays/tensileStrenghtArray";
@@ -145,7 +145,7 @@ const SingleConsumableViewInfos = () => {
       <input
         readOnly={!isAdmin}
         type={type}
-        value={type === "text" ? useCapitalizeFirstLetter(value) : value}
+        value={type === "text" ? capitalizeFirstLetter(value) : value}
         onChange={(event) => onChange(event.target.value)}
         className={`${
           isAdmin ? "border rounded" : ""
@@ -168,7 +168,7 @@ const SingleConsumableViewInfos = () => {
         <option value=""></option>
         {options.map((item, index) => (
           <option key={index} value={item.title}>
-            {prefix + useCapitalizeFirstLetter(item.title)}
+            {prefix + capitalizeFirstLetter(item.title)}
           </option>
         ))}
       </select>
