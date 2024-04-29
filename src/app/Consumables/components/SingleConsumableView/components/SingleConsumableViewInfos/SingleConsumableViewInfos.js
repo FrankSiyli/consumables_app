@@ -88,7 +88,6 @@ const SingleConsumableViewInfos = () => {
           alert("Failed to update category value");
         }
       } else {
-        console.log(`No change in ${category} value`);
       }
     } catch (error) {
       console.error("An error occurred:", error);
