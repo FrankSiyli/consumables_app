@@ -57,7 +57,7 @@ const ClickMenuItems = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [setFetchedConsumables, setIsLoading]);
 
   useEffect(() => {
     const filtered = fetchedConsumables.filter((item) => {
