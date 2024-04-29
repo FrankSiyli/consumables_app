@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { selectedCheckBoxesState } from "@/app/recoil/atoms/selectedCheckBoxesState";
-import useCapitalizeFirstLetter from "@/app/useFunctions/useCapitalizeFirstLetter";
+import capitalizeFirstLetter from "@/app/useFunctions/capitalizeFirstLetter";
 
 const HeaderCheckBoxes = () => {
   const [selectedCheckBoxes, setSelectedCheckBoxes] = useRecoilState(
@@ -43,7 +43,7 @@ const HeaderCheckBoxes = () => {
                     vacuum: "Vacuum",
                   }[categoryTitle]
                 }
-                : {useCapitalizeFirstLetter(selectedItem)}
+                : {capitalizeFirstLetter(selectedItem)}
               </p>
               <p className="border border-red-500/50 px-1 rounded text-red-500">
                 X

@@ -6,7 +6,7 @@ import { selectedSingleConsumableState } from "@/app/recoil/atoms/selectedSingle
 import { singleConsumableViewModeState } from "@/app/recoil/atoms/singleConsumableViewModeState";
 import { isLoadingState } from "@/app/recoil/atoms/isLoadingState";
 import { selectedCheckBoxesState } from "@/app/recoil/atoms/selectedCheckBoxesState";
-import useCapitalizeFirstLetter from "@/app/useFunctions/useCapitalizeFirstLetter";
+import capitalizeFirstLetter from "@/app/useFunctions/capitalizeFirstLetter";
 import Loader from "@/app/Loader/Loader";
 import { fetchedConsumablesState } from "@/app/recoil/atoms/fetchedConsumablesState";
 import logo from "../../../../../../public/logo.jpg";
@@ -129,10 +129,10 @@ const ClickMenuItems = () => {
                   />
                 </div>
                 <span className="w-1/5 text-center">
-                  {useCapitalizeFirstLetter(singleConsumable.title)}
+                  {capitalizeFirstLetter(singleConsumable.title)}
                 </span>
                 <span className="w-1/5 text-center">
-                  {useCapitalizeFirstLetter(singleConsumable.type)}
+                  {capitalizeFirstLetter(singleConsumable.type)}
                 </span>
                 <span className="w-1/5 text-center">
                   {singleConsumable.location.slice(0, 1) +

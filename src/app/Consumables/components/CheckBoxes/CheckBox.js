@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { selectedCheckBoxesState } from "@/app/recoil/atoms/selectedCheckBoxesState";
-import useCapitalizeFirstLetter from "@/app/useFunctions/useCapitalizeFirstLetter";
+import capitalizeFirstLetter from "@/app/useFunctions/capitalizeFirstLetter";
 import useToggleItems from "./useFunctions/useToggleItems";
 import { fetchedConsumablesState } from "@/app/recoil/atoms/fetchedConsumablesState";
 import { useTheme } from "next-themes";
@@ -99,9 +99,9 @@ const CheckBox = ({ categoryTitle, items }) => {
                 ? `${item.title}mm (${countAvailableTypes(item.title)})`
                 : categoryTitle === "vacuum"
                 ? `DN${item.title}(${countAvailableTypes(item.title)})`
-                : `${useCapitalizeFirstLetter(
+                : `${capitalizeFirstLetter(item.title)} (${countAvailableTypes(
                     item.title
-                  )} (${countAvailableTypes(item.title)})`}
+                  )})`}
             </p>
             <input
               type="checkbox"
