@@ -60,34 +60,35 @@ const SingleConsumableViewInfos = () => {
     const timestamp = new Date();
     setIsLoading(true);
     try {
-      const changes = [
-        selectedSingleConsumable[category] !== newValue
-          ? {
-              category,
-              oldValue: selectedSingleConsumable[category],
-              newValue,
-              timestamp: timestamp.toISOString(),
-            }
-          : null,
-      ].filter((change) => change !== null);
-      const response = await fetch("/api/updateConsumable", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: selectedSingleConsumable._id,
-          category,
-          value: newValue,
-          changes,
-        }),
-      });
-      console.log("response", response);
-      if (response.ok) {
-        setToastText("Consumable edited");
-        setShowToast(true);
+      if (selectedSingleConsumable[category] !== newValue) {
+        const changes = [
+          {
+            category,
+            oldValue: selectedSingleConsumable[category],
+            newValue,
+            timestamp: timestamp.toISOString(),
+          },
+        ];
+        const response = await fetch("/api/updateConsumable", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: selectedSingleConsumable._id,
+            category,
+            value: newValue,
+            changes,
+          }),
+        });
+        if (response.ok) {
+          setToastText("Consumable edited");
+          setShowToast(true);
+        } else {
+          alert("Failed to update category value");
+        }
       } else {
-        alert("Failed to update category value");
+        console.log(`No change in ${category} value`);
       }
     } catch (error) {
       console.error("An error occurred:", error);
