@@ -82,6 +82,7 @@ const SingleConsumableViewInfos = () => {
           changes,
         }),
       });
+      console.log("response", response);
       if (response.ok) {
         setToastText("Consumable edited");
         setShowToast(true);
@@ -90,10 +91,10 @@ const SingleConsumableViewInfos = () => {
       }
     } catch (error) {
       console.error("An error occurred:", error);
-    }
-    setTimeout(() => {
+      alert("Failed to update category value");
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleUpdateSubmitClick = () => {
