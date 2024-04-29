@@ -11,8 +11,6 @@ const ChangeLog = () => {
     selectedSingleConsumableState
   );
 
-  console.log("selectedSingleConsumable", selectedSingleConsumable);
-
   return (
     <>
       {isAdmin ? (
