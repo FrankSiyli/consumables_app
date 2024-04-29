@@ -8,7 +8,7 @@ export function DarkThemeProvider({ children }) {
 
   useEffect(() => {
     setTheme(theme);
-  }, [theme]);
+  }, [theme, setTheme]);
 
   return (
     <ThemeProvider
